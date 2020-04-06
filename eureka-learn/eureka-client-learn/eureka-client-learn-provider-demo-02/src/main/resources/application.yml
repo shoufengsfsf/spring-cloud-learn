@@ -13,3 +13,6 @@ eureka:
     service-url:
       #集群
       defaultZone: http://eurekaServerDemo01.com:7001/eureka/,http://eurekaServerDemo02.com:7002/eureka/
+  instance:
+    instance-id: provider-demo-service-02
+    prefer-ip-address: true
