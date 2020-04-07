@@ -16,3 +16,6 @@ eureka:
     service-url:
       #设置eureka server交互的地址：查询服务和注册服务都需要依赖这个地址（两个注册中心相互守望）
       defaultZone: http://eurekaServerDemo02.com:7002/eureka/
+  server:
+    #false：关闭自我保护机制
+    enable-self-preservation: false
