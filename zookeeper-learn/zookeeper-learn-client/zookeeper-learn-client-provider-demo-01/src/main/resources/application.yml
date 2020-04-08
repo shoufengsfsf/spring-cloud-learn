@@ -1,0 +1,9 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: zookeeper-client-provider
+  cloud:
+    zookeeper:
+      #zookeeper链接地址
+      connect-string: localhost:2181

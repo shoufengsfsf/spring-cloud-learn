@@ -1,0 +1,10 @@
+server:
+  port: 6002
+spring:
+  application:
+    name: zookeeper-client-consumer
+
+  cloud:
+    zookeeper:
+      #zookeeper链接地址
+      connect-string: localhost:2181

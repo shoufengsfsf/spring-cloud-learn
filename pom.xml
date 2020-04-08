@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>eureka-learn</module>
+        <module>zookeeper-learn</module>
     </modules>
     <packaging>pom</packaging>
     <description>springcloud学习笔记</description>
@@ -28,27 +29,27 @@
     <!-- 子模块继承之后，提供作用：锁定版本+子模块不用写groupId和version  -->
     <dependencyManagement>
         <dependencies>
-            <!--  springboot 2.2.2    -->
+            <!--  springboot 2.2.6.RELEASE    -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.2.RELEASE</version>
+                <version>2.2.6.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--  spring cloud Hoxton.SR1   -->
+            <!--  spring cloud Hoxton.SR3   -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR1</version>
+                <version>Hoxton.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--  spring cloud alibaba 2.1.0.RELEASE    -->
+            <!--  spring cloud alibaba 2.2.0.RELEASE    -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.1.0.RELEASE</version>
+                <version>2.2.0.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
