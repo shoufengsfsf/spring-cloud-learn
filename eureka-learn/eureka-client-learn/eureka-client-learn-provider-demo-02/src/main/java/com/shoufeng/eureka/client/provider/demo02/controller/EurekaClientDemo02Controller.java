@@ -1,9 +1,7 @@
 package com.shoufeng.eureka.client.provider.demo02.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,9 +16,8 @@ public class EurekaClientDemo02Controller {
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping("/para")
-    public String getRequest(HttpServletRequest request, HttpServletResponse httpServletResponse) {
-        String para = request.getParameter("para");
-        return para + serverPort;
+    @GetMapping("/para/{para}")
+    public String getRequest(@PathVariable("para") String para, @RequestParam(value = "name") String name) {
+        return para + serverPort + name;
     }
 }

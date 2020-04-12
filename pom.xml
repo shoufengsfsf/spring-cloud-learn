@@ -11,6 +11,9 @@
         <module>eureka-learn</module>
         <module>zookeeper-learn</module>
         <module>consul-learn</module>
+        <module>hystrix-learn</module>
+        <module>feign-learn</module>
+        <module>gateway-learn</module>
     </modules>
     <packaging>pom</packaging>
     <description>springcloud学习笔记</description>
