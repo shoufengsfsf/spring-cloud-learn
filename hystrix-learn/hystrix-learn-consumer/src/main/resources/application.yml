@@ -1,0 +1,44 @@
+server:
+  port: 80
+spring:
+  application:
+    name: hystrix-learn-comsumer
+
+eureka:
+  client:
+    #false表示不向注册中心注册自己
+    register-with-eureka: true
+    #false表示自己就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    fetch-registry: true
+    service-url:
+      #集群
+      defaultZone: http://eurekaServerDemo01.com:7001/eureka/,http://eurekaServerDemo02.com:7002/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+#  client:
+#    config:
+#      remote-service:           #服务名，填写default为所有服务
+#        connectTimeout: 20000
+#        readTimeout: 20000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            #熔断超时时间，这里的超时会调用@FeignClient的fallback
+            #@FeignClient的fallback和@HystrixCommand的fallbackMethod都超时了，优先使用@HystrixCommand的fallbackMethod（就近原则）
+            timeoutInMilliseconds: 3000
+
+ribbon:
+  #请求处理的超时时间，如果请求超时抛出异常那么直接导致服务降级
+  ReadTimeout: 20000
+  #请求连接超时时间
+  ConnectTimeout: 20000
+  #对当前实例的重试次数
+  MaxAutoRetries: 0
+  #切换实例的重试次数 1
+  MaxAutoRetriesNextServer: 1
