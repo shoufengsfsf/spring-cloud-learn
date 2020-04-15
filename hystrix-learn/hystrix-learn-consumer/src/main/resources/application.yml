@@ -31,14 +31,14 @@ hystrix:
           thread:
             #熔断超时时间，这里的超时会调用@FeignClient的fallback
             #@FeignClient的fallback和@HystrixCommand的fallbackMethod都超时了，优先使用@HystrixCommand的fallbackMethod（就近原则）
-            timeoutInMilliseconds: 3000
-
-ribbon:
-  #请求处理的超时时间，如果请求超时抛出异常那么直接导致服务降级
-  ReadTimeout: 20000
-  #请求连接超时时间
-  ConnectTimeout: 20000
-  #对当前实例的重试次数
-  MaxAutoRetries: 0
-  #切换实例的重试次数 1
-  MaxAutoRetriesNextServer: 1
+            timeoutInMilliseconds: 30000
+#
+#ribbon:
+#  #请求处理的超时时间，如果请求超时抛出异常那么直接导致服务降级
+#  ReadTimeout: 20000
+#  #请求连接超时时间
+#  ConnectTimeout: 20000
+#  #对当前实例的重试次数
+#  MaxAutoRetries: 0
+#  #切换实例的重试次数 1
+#  MaxAutoRetriesNextServer: 1

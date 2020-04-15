@@ -5,6 +5,7 @@ import com.shoufeng.hystrix.learn.consumer.service.impl.HystrixLearnConsumerServ
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @author shoufeng
@@ -19,4 +20,7 @@ public interface HystrixLearnConsumerService {
 
     @GetMapping("/hystrixlearnprovider/fiveSecondTimeOut")
     String fiveSecondTimeOutMethod() throws InterruptedException;
+
+    @GetMapping("/hystrixlearnprovider/calculate/{num}")
+    String calculate(@PathVariable(name = "num") Integer num);
 }

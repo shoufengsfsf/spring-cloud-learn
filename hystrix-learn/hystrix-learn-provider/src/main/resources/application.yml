@@ -9,3 +9,9 @@ eureka:
     service-url:
       #集群
       defaultZone: http://eurekaServerDemo01.com:7001/eureka/,http://eurekaServerDemo02.com:7002/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

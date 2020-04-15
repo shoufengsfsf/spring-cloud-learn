@@ -21,4 +21,9 @@ public class HystrixLearnProviderServiceImpl implements HystrixLearnProviderServ
         Thread.sleep(5000L);
         return "timeout: " + port;
     }
+
+    @Override
+    public String calculate(Integer num) {
+        return 10 / num + "s";
+    }
 }

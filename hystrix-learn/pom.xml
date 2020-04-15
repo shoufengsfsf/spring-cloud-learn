@@ -14,6 +14,7 @@
     <modules>
         <module>hystrix-learn-provider</module>
         <module>hystrix-learn-consumer</module>
+        <module>hystrix-learn-dashboard</module>
     </modules>
 
     <artifactId>hystrix-learn</artifactId>

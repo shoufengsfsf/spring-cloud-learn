@@ -14,4 +14,9 @@ public class HystrixLearnConsumerServiceImpl implements HystrixLearnConsumerServ
     public String fiveSecondTimeOutMethod() throws InterruptedException {
         return "fiveSecondTimeOutMethod他妈的fallback了";
     }
+
+    @Override
+    public String calculate(Integer num) {
+        return "calculate他妈的fallback了";
+    }
 }
